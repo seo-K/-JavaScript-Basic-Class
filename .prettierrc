@@ -1,0 +1,10 @@
+{
+    "useTabs": false,
+    "printWidth": 80,//가로 80개가 넘어가면 줄바꿈할거야
+    "tabWidth": 2,//탭하면 2개 넘어갈거야
+    "singleQuote": true,//홑따음표 쓸거야
+    "trailingComma": "all",
+    "endOfLine": "lf",
+    "semi": false,//세미콜론 안쓸거야
+    "arrowParens": "always"
+  }
