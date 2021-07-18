@@ -1,0 +1,19 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "plugins": ["import", "node", "promise", "standard"],//부가적 규칙
+    "env": {
+      "browser": true,
+      "node": true,
+    },//브라우저 환경 , 노드 환경 두가지 환경에서 자바스크립트가 돌아갈 수 있어
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"//프리티어 확장 모듈 쓸거야!
+    ],//기본 기둥이 되는 룰 eslint에서 기본 추천되는 룰을 기준으로 개발을 할게
+    "rules": {
+      "no-console": "warn"
+    }//커스텀 룰 / error 안돼! /warn 경고! / off 써도돼!
+  }
