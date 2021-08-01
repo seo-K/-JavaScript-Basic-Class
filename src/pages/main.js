@@ -1,5 +1,9 @@
 class MainPage {
-  constructor() {}
+  constructor() {
+    this.rootEl = document.getElementById("root")
+
+    this.render()
+  }
 
   //페이지 내용을 그려주는 함수
   render() {

@@ -1,6 +1,6 @@
 //클래스는 대문자로 시작한다
 // 객체를 만드는 방법 중에 하나!
-class Todo {
+class TodoManager {
   //클래스가 만들어질 때 제일 먼저 동작하는 함수
   //값을 초기화하는 곳, 처음 만들어질 때 동작할 함수들을 정의
   constructor() {
@@ -44,4 +44,4 @@ class Todo {
 //만들때는 new 키워드를 사용한다.
 // var todo = new Todo()
 
-export default Todo
+export default TodoManager

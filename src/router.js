@@ -32,8 +32,8 @@ class Router {
     //정해진  path 에 맞는 페이지가 없을 때
     if (!PageComponent) {
       //error 페이지
-      const ErroPageComponent = this.routes["/error"]
-      new ErroPageComponent()
+      const ErrorPageComponent = this.routes["/error"]
+      new ErrorPageComponent()
 
       //함수는 return을 만나면 종료된다.
       return

@@ -1,4 +1,4 @@
-class errorPage {
+class ErrorPage {
   constructor() {
     this.rootEl = document.getElementById("root")
 
@@ -8,9 +8,9 @@ class errorPage {
   //페이지 내용을 그려주는 함수
   render() {
     this.rootEl.innerHTML = `
-    <h1>error Page</h1>
+      <h1>Error Page</h1>
     `
   }
 }
 
-export default errorPage
+export default ErrorPage
