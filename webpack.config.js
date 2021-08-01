@@ -1,4 +1,6 @@
-const path = require('path')
+const path = require("path")
+
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 // module.exports 밖에서 가져다 쓸 수 있도록 내보낸다.
 module.exports = {
@@ -6,12 +8,12 @@ module.exports = {
   // => webpack.config.js 를 기준으로 ./src/index.js 경로
 
   // entry 시작점
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, "./src/index.js"),
   // output 빌드 결과물을 내보내는곳
   output: {
-    filename: 'bundle.js',
+    filename: "bundle.[hash].js",
     // 나를 기준으로 ./dist 폴더 안에 빌드 결과물을 생성 할 것 이다.
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, "dist"),
   },
   // 웹팩은 파일을 가져 올 수는 있지만 안에 있는 코드를 해석하지는 못한다.
   // 부가적인 loader (코드를 해석 할 수 있는 수단)
@@ -23,13 +25,25 @@ module.exports = {
     rules: [
       {
         test: /\.(js)$/, // JS로 끝나는 파일들을 읽어온다.
-        use: 'babel-loader', // 읽어온 파일을 babel 로 변화시킨다.
+        use: "babel-loader", // 읽어온 파일을 babel 로 변화시킨다.
         exclude: /node_modules/,
       },
     ],
   },
   // 모듈시스템
   resolve: {
-    extensions: ['.js'],
+    extensions: [".js"],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html", // 어떤 html 파일을 기준으로 동작을 할 것 인가 ?
+      filename: "./index.html", // 이름을 어떻게 내보낼 것인가 ? output path 를 따라간다.
+    }),
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"), //어떤걸 기준으로 경로를 삼을껀가 묻는 곳
+    hot: true,
+    open: true, //데브써버를 열어주는
+    //그리고 단축키 등록 고고 패키지점 json
   },
 }
